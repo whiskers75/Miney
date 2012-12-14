@@ -5,8 +5,8 @@
  * CODE AT github.com/whiskers75/miney
  **/
 
-var lib = require(__dirname + '/lib');
-var packs = require(__dirname + '/packs');
+var lib = require(__dirname + '/lib/');
+var packs = require(__dirname + '/packs/');
 var colorize = require('colorize')
 var redis = require('redis');
 var version = require(__dirname + '/package.json').version;

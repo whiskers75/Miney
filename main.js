@@ -29,10 +29,10 @@ process.on('SIGTERM', function() {
 });
 exports.testOut = function(out) {
     try {
-        var testOut = require(__dirname + '/' + out + '/main.js');
+        require(__dirname + '/' + out + '/main.js');
     }
     catch (error) {
-        throw new Error('Out (testing) error: ' + error);
+        return new Error('Out (testing) error: ' + error);
     }
 
 }

@@ -59,7 +59,6 @@ Enjoy!
 
 </ul> <!-- closes class for buttons -->
 
-</ul> <!-- no idea what on earth this does -->
 
 <div id="login-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true"> <!-- Start login modal -->
 <div id="modal-header"> <!-- Modal header -->
@@ -70,17 +69,18 @@ Enjoy!
 
 <h3 class="muted">whiskers75/Miney   <span class="label label-success">Open Source!</span></h3> <!-- Title -->
 </div> <!-- I bet this closes masthead, but I can't be bothered to check ATM -->
+
+<iframe id="main"></iframe><!-- The main iframe for diaply of data -->
+
 </div> <!-- I *think* this closes container-narrow -->
 <a href="https://github.com/whiskers75/Miney"> <!-- BEGIN GITHUB RIBBON CODE -->
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">
 </a> <!-- END GITHUB RIBBON CODE -->
 
-</div> <!-- We have no idea what this /div is for sorry -->
-
-<script src="http://code.jquery.com/jquery-latest.js"> <!-- Require jQuery, a popular JS library -->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- Require jQuery, a popular JS library -->
 
 <!-- The (commented out) Socket.IO code (logins!):
-<script src="https://raw.github.com/LearnBoost/socket.io-client/master/socket.io-client.js">
+<script src="https://raw.github.com/LearnBoost/socket.io-client/master/socket.io-client.js"></script>
 <script>
     var socket = io.connect("http://whiskers75-miney.herokuapp.com");
     function login(username, password) {
@@ -97,9 +97,9 @@ Enjoy!
                 return {result:"Server returned error: " + error, id: id};
             }
             return {result: true, id: id};
-        })
+        });
     }
 </script> -->
-<script src='bootstrap/js/bootstrap.js' type='text/javascript'> <!-- Le Bootstrap JS -->
+<script src='bootstrap/js/bootstrap.js' type='text/javascript'></script> <!-- Le Bootstrap JS -->
 </body> <!-- END BODY -->
 </html> <!-- EOF -->

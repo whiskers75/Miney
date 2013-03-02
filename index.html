@@ -1,5 +1,26 @@
-<html lang="en">
-<head>
+<!DOCTYPE html> <!-- HTML5 declaration - don't remove this or else the page will mess up!! -->
+
+
+<!--
+
+whiskers75/miney website HTML
+Commented out for your pleasure.
+Open Source - licenced under the GPLv2 or any later version at the user's discretion.
+Feel free to copy some of the stuff I've used here.
+Enjoy!
+- whiskers75
+
+
+-->
+
+
+
+<html lang="en"> <!-- Start of HTML tag -->
+
+
+<head> <!-- HEAD -->
+
+<!-- Narrow page classes! (Taken from Bootstrap's example) -->
 <style type="text/css">
      .container-narrow {
         margin: 0 auto;
@@ -9,78 +30,57 @@
         margin: 30px 0;
       }
 </style>
-<title>whiskers75/miney</title>
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-</head>
-<body>
-<div class="container-narrow">
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="index.html">Home</a></li>
-<!--          <li><a href="#">About</a></li> -->
-<div class="btn-group">
-<button class="btn" data-toggle="modal" data-target="#login-modal">Login</button>
+
+
+<title>whiskers75/miney</title> <!-- browser page title -->
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> <!-- include Bootstrap -->
+
+</head> <!-- END OF HEAD -->
+
+<body> <!-- BODY -->
+<div class="container-narrow"> <!--  Begin narrow page style documented on line 10 -->
+      
+<div class="masthead"> <!-- Open navbar-->
+        
+<ul class="nav nav-pills pull-right"> <!-- Open class for buttons -->
+
+<li class="active">
+<a href="index.html">Home</a></li> <!-- Home button link -->
+
+ <!-- Template for future links         <li><a href="#">About</a></li> -->
+
+<div class="btn-group"> <!-- Login/Register button group - just makes it look a bit nicer on IE -->
+<button class="btn" data-toggle="modal" data-target="#login-modal">Login</button> <!-- Login button -->
 <button class="btn">Register</button>
+</div> <!-- Closes btn-group -->
+
+</li> <!-- closes <li class="active"> -->
+
+</ul> <!-- closes class for buttons -->
+
+</ul> <!-- no idea what on earth this does -->
+
+<div id="login-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true"> <!-- Start login modal -->
+<div id="modal-header"> <!-- Modal header -->
+<h3> Login </h3>
 </div>
-</div>
-<div class="jumbotron">
-<iframe id="mainframe"></iframe>
-<div id="login-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+</div> <!-- Closes login modal -->
 
-  <form class="form-horizontal">
-    <fieldset>
-      <div id="modal-header">
-        <legend class="">Login</legend>
-      </div>
-     <div id="modal-body">
-    <div class="control-group">
 
-          <!-- Text input-->
-          <label class="control-label" for="input01">Username</label>
-          <div class="controls">
-            <input type="text" placeholder="whiskers75" class="input-xlarge">
-            <p class="help-block"></p>
-          </div>
-        </div>
-
-    <div class="control-group">
-
-          <!-- Text input-->
-          <label class="control-label" for="input01">Password</label>
-          <div class="controls">
-            <input type="text" placeholder="password" class="input-xlarge">
-            <p class="help-block"></p>
-          </div>
-        </div>
-
-    <div class="control-group">
-          <label class="control-label"></label>
-
-          <!-- Button -->
-          <div class="controls">
-            <button class="btn btn-info">Login</button>
-          </div>
-        </div>
-
-    </fieldset>
-    </div>
-  </form>
-</div>
-</div>
-</li>
-</ul>
-</ul>
 <h3 class="muted">whiskers75/Miney   <span class="label label-success">Open Source!</span></h3> <!-- Title -->
-</div>
-</div>
-<a href="https://github.com/whiskers75/Miney">
+</div> <!-- I bet this closes masthead, but I can't be bothered to check ATM -->
+</div> <!-- I *think* this closes container-narrow -->
+<a href="https://github.com/whiskers75/Miney"> <!-- BEGIN GITHUB RIBBON CODE -->
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">
-</a>
+</a> <!-- END GITHUB RIBBON CODE -->
 
-</div>
-<script src="http://code.jquery.com/jquery-latest.js">
-</script>
-<script src="https://raw.github.com/LearnBoost/socket.io-client/master/socket.io-client.js"></script>
+</div> <!-- We have no idea what this /div is for sorry -->
+
+<script src="http://code.jquery.com/jquery-latest.js"> <!-- Require jQuery, a popular JS library -->
+
+<!-- The (commented out) Socket.IO code (logins!):
+<script src="https://raw.github.com/LearnBoost/socket.io-client/master/socket.io-client.js">
 <script>
     var socket = io.connect("http://whiskers75-miney.herokuapp.com");
     function login(username, password) {
@@ -99,13 +99,7 @@
             return {result: true, id: id};
         })
     }
-</script>
-<script src='bootstrap/js/bootstrap.js' type='text/javascript'>
-</script>
-</body>
-</html>
-
-
-
-</body>
-</html>
+</script> -->
+<script src='bootstrap/js/bootstrap.js' type='text/javascript'> <!-- Le Bootstrap JS -->
+</body> <!-- END BODY -->
+</html> <!-- EOF -->

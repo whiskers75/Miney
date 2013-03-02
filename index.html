@@ -80,7 +80,7 @@ Enjoy!
 </iframe><!-- The main iframe for display of data -->
 </li><!-- closes <li class="active"> -->
 <script type='text/javascript'>
-var main = document.getElementByID('main').contentDocument;
+var main = document.getElementById('main').contentDocument;
 setTimeout(function() {
 main.contentDocument.innerHTML = '<p>test</p>'
 alert(main.contentDocument.innerHTML);

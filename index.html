@@ -51,7 +51,7 @@ Enjoy!
 
 <li><button class="btn btn-link" data-toggle="modal" data-target="#login-modal">Login</button></li> <!-- Login button -->
 <li><button class="btn btn-link">Register</button></li>
-<li><<p id='loginmsg'>Not logged in</p></li>
+<li><p id='loginmsg'>Not logged in</p></li>
 </ul> <!-- closes class for buttons/links -->
 
 
@@ -76,21 +76,26 @@ Enjoy!
 </div> <!-- I bet this closes masthead, but I can't be bothered to check ATM -->
 
 <iframe id="main" height="800" width="800" frameborder="no">
-<div class='container-narrow'> <!-- Yes, I'm sneaking one of these in here -->
-    <h3>
-        I've got an invisible iframe here!  
-    </h3>
-    <p>
-        This iframe will eventually be used to display the page content.
-        <b>Why an iframe?</b>
-        It's a little hack I can use to change the page data without refreshing it.
-        Pretty handy, since all this cookies and stuff is driving me crazy.
-        Much better to do it all in an iframe.
-    </p>
-</div>
+
 </iframe><!-- The main iframe for display of data -->
 </li><!-- closes <li class="active"> -->
-
+<script type='text/javascript'>
+    $(function() {
+    var $frame = $('<iframe id="main" height="800" width="800" frameborder="no">');
+	setTimeout( function() {
+		var doc = $frame[0].contentWindow.document;
+		var $body = $(doc);
+		$body.html("<p>Hello world!</p>");
+	}, 1 );
+    function updateMain(html) {
+        setTimeout(function() {
+            var doc = $frame[0].contentWindow.document;
+            var $body = $(doc);
+            $body.html(html);
+            }, 1 );
+    }
+});
+</script>
 <a href="https://github.com/whiskers75/Miney"> <!-- BEGIN GITHUB RIBBON CODE -->
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">
 </a> <!-- END GITHUB RIBBON CODE -->

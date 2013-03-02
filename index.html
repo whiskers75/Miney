@@ -81,11 +81,11 @@ Enjoy!
 </li><!-- closes <li class="active"> -->
 <script type='text/javascript'>
 var main = document.getElementById('main').contentDocument;
+var debug = false; // Activate debug mode by setting this to true
 setTimeout(function() {
-main.contentDocument.innerHTML = '<p>test</p>'
-alert(main.contentDocument.innerHTML);
-main.write('TEST');
-}, 150);
+    main.documentElement.innerHTML = '<html>\n<head>\n<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n</head>\n<body>\n<h3>Welcome to the Miney Project</h3>\n</body>\n</html>'
+    main.write('<h2>Coded by whiskers75</h2>');
+}, 1500)
 </script>
 <a href="https://github.com/whiskers75/Miney"> <!-- BEGIN GITHUB RIBBON CODE -->
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">

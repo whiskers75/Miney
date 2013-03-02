@@ -75,25 +75,18 @@ Enjoy!
 <h3 class="muted">whiskers75/Miney   <span class="label label-success">Open Source!</span></h3> <!-- Title -->
 </div> <!-- I bet this closes masthead, but I can't be bothered to check ATM -->
 
-<iframe id="main" height="800" width="800" frameborder="no">
-
+<iframe id="main" height="800" width="800" frameborder="no"></iframe>
 </iframe><!-- The main iframe for display of data -->
 </li><!-- closes <li class="active"> -->
 <script type='text/javascript'>
 var main = document.getElementById('main').contentDocument;
 var debug = false; // Activate debug mode by setting this to true
 setTimeout(function() {
-    main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n<h3>Welcome to the Miney Project</h3>\n<h2>Coded by whiskers75</h2>');
-    main.flush = function() {
-        main.documentElement.innerHTML.a = '<html>\n<head>\n<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n</head>\n<body>\n'
-        main.documentElement.innerHTML.b = '\n</body\n></html>'
-        main.documentElement.innerHTML = main.documentElement.innerHTML.a + main.documentElement.innerHTML.b
-    }
-    main.write = function(text) {
-        main.documentElement.innerHTML.a = main.documentElement.innerHTML.a + text + '\n'
-        main.documentElement.innerHTML =  main.documentElement.innerHTML.a + main.documentElement.innerHTML.b
-    }
+    main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Welcome to the Miney Project by whiskers75!</div>\n');
 }, 1500)
+function updateLogin(name) {
+    document.getElementById('loginmsg').innerHTML = 'Logged in as: '+ name;
+}
 </script>
 <a href="https://github.com/whiskers75/Miney"> <!-- BEGIN GITHUB RIBBON CODE -->
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">

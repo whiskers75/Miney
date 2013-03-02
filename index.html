@@ -43,26 +43,32 @@ Enjoy!
       
 <div class="masthead"> <!-- Open navbar-->
         
-<ul class="nav nav-pills pull-right"> <!-- Open class for buttons -->
+<ul class="nav nav-pills pull-right"> <!-- Open class for buttons/links -->
 
 <li class="active">
-<a href="index.html">Home</a></li> <!-- Home button link -->
-
+<a href="index.html">Home</a> <!-- Home button link -->
+</li><!-- closes <li class="active"> -->
  <!-- Template for future links         <li><a href="#">About</a></li> -->
 
 <div class="btn-group"> <!-- Login/Register button group - just makes it look a bit nicer on IE -->
 <button class="btn" data-toggle="modal" data-target="#login-modal">Login</button> <!-- Login button -->
 <button class="btn">Register</button>
 </div> <!-- Closes btn-group -->
-
-</li> <!-- closes <li class="active"> -->
-
-</ul> <!-- closes class for buttons -->
+<p id='loginmsg'>Not logged in</p>
+</ul> <!-- closes class for buttons/links -->
 
 
 <div id="login-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true"> <!-- Start login modal -->
 <div id="modal-header"> <!-- Modal header -->
 <h3> Login </h3>
+</div>
+<div id="modal-body">
+    <p> This page is still under development.
+        As such, this feature isn't quite done yet.
+        However, you can test it by clicking on the button below.
+        This will log you in as a test user.
+    </p>
+    <button style='text-align: center'>Login</button>
 </div>
 </div> <!-- Closes login modal -->
 

@@ -85,8 +85,13 @@ var debug = false; // Activate debug mode by setting this to true
 setTimeout(function() {
     main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n<h3>Welcome to the Miney Project</h3>\n<h2>Coded by whiskers75</h2>');
     main.flush = function() {
-        main.documentElement.innerHTML = '<html><head></head><body></body></html>'
-        main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n');
+        main.documentElement.innerHTML.a = '<html>\n<head>\n<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n</head>\n<body>\n'
+        main.documentElement.innerHTML.b = '\n</body\n></html>'
+        main.documentElement.innerHTML = main.documentElement.innerHTML.a + main.documentElement.innerHTML.b
+    }
+    main.write = function(text) {
+        main.documentElement.innerHTML.a = main.documentElement.innerHTML.a + text + '\n'
+        main.documentElement.innerHTML =  main.documentElement.innerHTML.a + main.documentElement.innerHTML.b
     }
 }, 1500)
 </script>

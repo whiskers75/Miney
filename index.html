@@ -80,15 +80,8 @@ Enjoy!
 </iframe><!-- The main iframe for display of data -->
 </li><!-- closes <li class="active"> -->
 <script type='text/javascript'>
-$(function() {
-    var $frame = $('<iframe style="width:200px; height:100px;">');
-	$('body').html( $frame );
-	setTimeout( function() {
-		var doc = $frame[0].contentWindow.document;
-		var $body = $('body',doc);
-		$body.html('<h1>Test</h1>');
-	}, 1 );
-});
+var main = document.getElementByID('main').contentDocument; // Define main iframe
+main.documentElement.innerHTML = '<h1>TEST</h1>'
 </script>
 <a href="https://github.com/whiskers75/Miney"> <!-- BEGIN GITHUB RIBBON CODE -->
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">

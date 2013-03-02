@@ -46,13 +46,12 @@ Enjoy!
 <ul class="nav nav-pills pull-right"> <!-- Open class for buttons/links -->
 
 <li class="active">
-<a href="index.html">Home</a> <!-- Home button link -->
 
  <!-- Template for future links         <li><a href="#">About</a></li> -->
- 
-<button class="btn btn-link" data-toggle="modal" data-target="#login-modal">Login</button> <!-- Login button -->
-<button class="btn btn-link">Register</button>
-<p id='loginmsg'>Not logged in</p>
+
+<li><button class="btn btn-link" data-toggle="modal" data-target="#login-modal">Login</button></li> <!-- Login button -->
+<li><button class="btn btn-link">Register</button></li>
+<li><<p id='loginmsg'>Not logged in</p></li>
 </ul> <!-- closes class for buttons/links -->
 
 
@@ -66,7 +65,9 @@ Enjoy!
         However, you can test it by clicking on the button below.
         This will log you in as a test user.
     </p>
-    <button style='text-align: center'>Login</button>
+    <div class='container-narrow'> <!-- I use these to center my stuff -->
+    <button class='btn btn-success close' data-dismiss="modal">Login</button>
+    </div>
 </div>
 </div> <!-- Closes login modal -->
 
@@ -74,7 +75,20 @@ Enjoy!
 <h3 class="muted">whiskers75/Miney   <span class="label label-success">Open Source!</span></h3> <!-- Title -->
 </div> <!-- I bet this closes masthead, but I can't be bothered to check ATM -->
 
-<iframe id="main" height="800" width="800" frameborder="no"></iframe><!-- The main iframe for display of data -->
+<iframe id="main" height="800" width="800" frameborder="no">
+<div class='container-narrow'> <!-- Yes, I'm sneaking one of these in here -->
+    <h3>
+        I've got an invisible iframe here!  
+    </h3>
+    <p>
+        This iframe will eventually be used to display the page content.
+        <b>Why an iframe?</b>
+        It's a little hack I can use to change the page data without refreshing it.
+        Pretty handy, since all this cookies and stuff is driving me crazy.
+        Much better to do it all in an iframe.
+    </p>
+</div>
+</iframe><!-- The main iframe for display of data -->
 </li><!-- closes <li class="active"> -->
 
 <a href="https://github.com/whiskers75/Miney"> <!-- BEGIN GITHUB RIBBON CODE -->

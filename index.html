@@ -64,7 +64,6 @@ Enjoy!
         As such, this feature isn't quite done yet.
         However, you can test it by clicking on the button below.
         This will log you in as a test user.
-        (If the dialog doesn't dismiss, click outside it.)
     </p>
     <div class='container-narrow'> <!-- I use these to center my stuff -->
     <button class='btn btn-success' data-dismiss="modal">Login</button>
@@ -81,20 +80,14 @@ Enjoy!
 </iframe><!-- The main iframe for display of data -->
 </li><!-- closes <li class="active"> -->
 <script type='text/javascript'>
-    $(function() {
-    var $frame = $('<iframe id="main" height="800" width="800" frameborder="no">');
+$(function() {
+    var $frame = $('<iframe style="width:200px; height:100px;">');
+	$('body').html( $frame );
 	setTimeout( function() {
 		var doc = $frame[0].contentWindow.document;
-		var $body = $(doc);
-		$body.html("<p>Hello world!</p>");
+		var $body = $('body',doc);
+		$body.html('<h1>Test</h1>');
 	}, 1 );
-    function updateMain(html) {
-        setTimeout(function() {
-            var doc = $frame[0].contentWindow.document;
-            var $body = $(doc);
-            $body.html(html);
-            }, 1 );
-    }
 });
 </script>
 <a href="https://github.com/whiskers75/Miney"> <!-- BEGIN GITHUB RIBBON CODE -->

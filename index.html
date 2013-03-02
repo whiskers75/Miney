@@ -83,8 +83,11 @@ Enjoy!
 var main = document.getElementById('main').contentDocument;
 var debug = false; // Activate debug mode by setting this to true
 setTimeout(function() {
-    main.documentElement.innerHTML = '<html>\n<head>\n<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n</head>\n<body>\n<h3>Welcome to the Miney Project</h3>\n</body>\n</html>'
-    main.write('<h2>Coded by whiskers75</h2>');
+    main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n<h3>Welcome to the Miney Project</h3>\n<h2>Coded by whiskers75</h2>');
+    main.flush = function() {
+        main.documentElement.innerHTML = '<html><head></head><body></body></html>'
+        main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n');
+    }
 }, 1500)
 </script>
 <a href="https://github.com/whiskers75/Miney"> <!-- BEGIN GITHUB RIBBON CODE -->

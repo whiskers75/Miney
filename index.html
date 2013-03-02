@@ -80,10 +80,9 @@ Enjoy!
 </li><!-- closes <li class="active"> -->
 <script type='text/javascript'>
 var main = document.getElementById('main').contentDocument;
-var debug = false; // Activate debug mode by setting this to true
 setTimeout(function() {
-    main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n<div id="welcome" class="alert alert-success"><button type="button" class="close" data-dismiss="alert"></button>Miney website version 0.1beta1</div>');
-}, 1500)
+    main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n');
+}, 10);
 function updateLogin(name) {
     document.getElementById('loginmsg').innerHTML = 'Logged in as: '+ name;
 }

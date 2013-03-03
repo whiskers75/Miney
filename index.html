@@ -52,6 +52,7 @@ Enjoy!
 <li><button class="btn btn-link" data-toggle="modal" data-target="#login-modal">Login</button></li> <!-- Login button -->
 <li><button class="btn btn-link">Register</button></li>
 <li><p id='loginmsg'>Not logged in</p></li>
+<li><i class='icon-signal' id='loginicon'></i><p id='connstatus'>Connecting</p></li>
 </ul> <!-- closes class for buttons/links -->
 
 
@@ -78,6 +79,7 @@ Enjoy!
 <iframe id="main" height="800" width="800" frameborder="no"></iframe>
 </iframe><!-- The main iframe for display of data -->
 </li><!-- closes <li class="active"> -->
+<script src="https://raw.github.com/LearnBoost/socket.io-client/master/socket.io-client.js"></script>
 <script type='text/javascript'>
 var main = document.getElementById('main').contentDocument;
 setTimeout(function() {
@@ -97,6 +99,36 @@ function loginTest() {
         main.write('<p> People with JavaScript consoles can use this to test code.\nJust open your console up, type in main.open() to clear,\nand then go ahead and main.write() your HTML in.</p>\n')
     }, 10000)
 }
+var conn = false;
+function connected() {
+    document.getElementById('loginicon').className = 'icon-ok'
+    document.getElementById('connstatus').innerHTML = 'Connected'
+    conn = true;
+}
+function connecting() {
+    document.getElementById('loginicon').className = 'icon-signal'
+    document.getElementById('connstatus').innerHTML = 'Connecting'
+    conn = false;
+}
+var socket = io.connect('http://whiskers75-miney.herokuapp.com/');
+socket.on('ready', function() {
+    connected();
+});
+socket.on('end', function() {
+    connecting();
+    socket = io.connect('http://whiskers75-miney.herokuapp.com/');
+});
+socket.on('write', function(data) {
+    main.write(data);
+});
+socket.on('flush', function() {
+    main.close();
+    main.open();
+    main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n');
+});
+function buttonPressed(id) {
+    socket.emit('button', {id: id});
+}
 </script>
 <a href="https://github.com/whiskers75/Miney"> <!-- BEGIN GITHUB RIBBON CODE -->
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">
@@ -104,28 +136,6 @@ function loginTest() {
 
 </div> <!-- I *think* this closes container-narrow -->
 <script src="http://code.jquery.com/jquery-latest.js"></script> <!-- Require jQuery, a popular JS library -->
-
-<!-- The (commented out) Socket.IO code (logins!):
-<script src="https://raw.github.com/LearnBoost/socket.io-client/master/socket.io-client.js"></script>
-<script>
-    var socket = io.connect("http://whiskers75-miney.herokuapp.com");
-    function login(username, password) {
-        var id = Math.random();
-        socket.emit('login', {user: username, pass: password, id: id});
-        socket.once('loginDone', function(success, returnid, error) {
-            if (id != returnid) {
-                return {result: "Simultaneous Login Error. Please try again.", id: id};
-            }
-            if (success !== true) {
-                return {result: "User/pass combo incorrect.", id: id};
-            }
-            if (error) {
-                return {result:"Server returned error: " + error, id: id};
-            }
-            return {result: true, id: id};
-        });
-    }
-</script> -->
 <script src='bootstrap/js/bootstrap.js' type='text/javascript'></script> <!-- Le Bootstrap JS -->
 </body> <!-- END BODY -->
 </html> <!-- EOF -->

@@ -91,25 +91,23 @@ function updateLogin(name) {
 }
 function loginTest() {
     updateLogin('TestUser');
-    main.write('<h2>Logged in as TestUser</h2>\n<h3>In theory, the page would hand controls over this space to the server,\nwhich would write a control panel.</h3>\n<p><b>Did you know that this is an iframe?</b></p>\n');
-    main.close()
-    setTimeout(function() {
-        main.open();
-        main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n');
-        main.write('<h1>As you just saw, it is also possible to clear the screen.</h1>\n');
-        main.write('<p> People with JavaScript consoles can use this to test code.\nJust open your console up, type in main.open() to clear,\nand then go ahead and main.write() your HTML in.</p>\n')
-    }, 10000)
 }
 var conn = false;
 function connected() {
     document.getElementById('loginicon').className = 'icon-ok'
     document.getElementById('connstatus').innerHTML = 'Connected'
     conn = true;
+    main.close();
+    main.open();
+    main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n');
 }
 function connecting() {
     document.getElementById('loginicon').className = 'icon-signal'
     document.getElementById('connstatus').innerHTML = 'Connecting'
     conn = false;
+    main.close();
+    main.open();
+    main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n<h1>Server connection in progress</h2>\n<h5>Icons courtesy of Glyphicons and Bootstrap.</h5>\n');
 }
 var socket = io.connect('http://miney.herokuapp.com/');
 socket.on('ready', function() {

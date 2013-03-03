@@ -51,13 +51,15 @@ io.sockets.on('connection', function(socket) {
     socket.flush = function() {
         this.emit('flush', {});
     };
-    setInterval(function() {
-        socket.write('\n<h3>Server version ' + version + ' connected!</h3>\n<h5>Current date and time: ' + Date() + '</h5>\n');
-    }, 1000);
-    setInterval(function() {
+    socket.flush();
+    socket.motd = setInterval(function() {
         socket.flush();
-    }, 999);
+        socket.write('\n<h3>Server version ' + version + ' connected!</h3>\n<h5>Current date and time: ' + Date() + '</h5>\n<h5>Miney server out.</h5>');
+    }, 1000);
     socket.on('debug', function() {
         console.log('Socket.IO debug command recieved on socket ' + sockets.indexOf(socket) + '!');
+    });
+    socket.on('end', function() {
+        clearInterval(socket.motd);
     });
 });

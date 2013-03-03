@@ -16,6 +16,7 @@ console.log = function(x) {
     process.stdout.write('[' + Date() + '] ' + x);
 };
 // 2: Minecraft bridge
+if (process.env.MCHOST) {
 var connection = new Rcon(process.env.MCHOST, process.env.RCPORT, process.env.RCPASSWD);
 
 connection.on('auth', function() {
@@ -35,7 +36,7 @@ connection.on('response', function(data) {
 console.log("Connecting to Minecraft");
 connection.connect();
 
-
+}
 // 4: Socket.IO
 io.sockets.on('connection', function(socket) {
     sockets.push(socket);

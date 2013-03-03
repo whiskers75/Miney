@@ -7,6 +7,12 @@
 // Require modules
 var Rcon = require('rcon'); // RCON is needed to connect to the server
 var io = require('socket.io').listen(80);
+
+
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
 // Initialize variables
 var ready = false;
 var version = '0.0.1b1';

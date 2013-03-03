@@ -45,6 +45,10 @@ io.sockets.on('connection', function(socket) {
     sockets.push(socket);
     console.log('Socket.IO connection recieved: Socket ' + sockets.indexOf(socket));
     socket.emit('ready', {});
+    socket.emit('write', {data: '\n<h3>Connected to main server!</h3>\n<h4>You have successfully created a connection to the server.</h4>\n<h5>This page will reset in 15 seconds.</h5>\n'})
+    setTimeout(function(){
+        socket.emit('flush', {});
+    }, 15000)
     socket.on('debug', function() {
         console.log('Socket.IO debug command recieved on socket ' + sockets.indexOf(socket) + '!');
     });

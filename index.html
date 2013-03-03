@@ -120,7 +120,7 @@ socket.on('end', function() {
     socket = io.connect('http://miney.herokuapp.com/');
 });
 socket.on('write', function(data) {
-    main.write(data);
+    main.write(data.data);
 });
 socket.on('flush', function() {
     main.close();

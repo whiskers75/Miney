@@ -43,4 +43,4 @@ io.sockets.on('connection', function(socket) {
     socket.on('debug', function() {
         console.log('Socket.IO debug command recieved on socket ' + sockets.indexOf(socket) + '!');
     });
-})
+});

@@ -17,10 +17,6 @@ io.configure(function () {
 var ready = false;
 var version = '0.0.1b1';
 var sockets = [];
-// Add logging
-console.log = function(x) {
-    process.stdout.write('[' + Date() + '] ' + x);
-};
 // 2: Minecraft bridge
 if (false) {
 var connection = new Rcon(process.env.MCHOST, process.env.RCPORT, process.env.RCPASSWD);

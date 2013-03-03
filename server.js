@@ -22,7 +22,7 @@ console.log = function(x) {
     process.stdout.write('[' + Date() + '] ' + x);
 };
 // 2: Minecraft bridge
-if (process.env.MCHOST) {
+if (false) {
 var connection = new Rcon(process.env.MCHOST, process.env.RCPORT, process.env.RCPASSWD);
 
 connection.on('auth', function() {

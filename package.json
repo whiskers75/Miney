@@ -5,6 +5,7 @@
     "node": "0.6.x"
   },
   "dependencies": {
-    "rcon": "*"
+    "rcon": "*",
+    "socket.io": "*"
   }
 }

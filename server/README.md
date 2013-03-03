@@ -1,9 +1,10 @@
 Certain folders and files in the server portion of Miney are copyrighted and protected under certain licences.
 
+
 These include:
 
-   Tekkit Lite 0.5.7 + mods
-   http://www.technicpack.net/tekkit-lite
+    Tekkit Lite 0.5.7 + mods
+    http://www.technicpack.net/tekkit-lite
    
 v1.10_1.4.6
  
@@ -269,4 +270,6 @@ Updated Steves’ Carts to version 2.0.0.a42
 Updated Treecapitator to version 1.4.6.r03
 Updated TubeStuff to version 52.0.8
 
-
+    ForgeEssentials
+    http://www.minecraftforum.net/topic/1661157-forgeforgeessentials-bukkit-functionality-for-your-forge-server/
+    See ForgeEssentialsLicence.TXT

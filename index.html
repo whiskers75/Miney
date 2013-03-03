@@ -80,7 +80,7 @@ Enjoy!
 <iframe id="main" height="800" width="800" frameborder="no"></iframe>
 </iframe><!-- The main iframe for display of data -->
 </li><!-- closes <li class="active"> -->
-<script src="http://whiskers75-miney.herokuapp.com/socket.io/socket.io-client.js"></script>
+<script src="http://miney.herokuapp.com/socket.io/socket.io-client.js"></script>
 <script type='text/javascript'>
 var main = document.getElementById('main').contentDocument;
 setTimeout(function() {
@@ -111,13 +111,13 @@ function connecting() {
     document.getElementById('connstatus').innerHTML = 'Connecting'
     conn = false;
 }
-var socket = io.connect('http://whiskers75-miney.herokuapp.com/');
+var socket = io.connect('http://miney.herokuapp.com/');
 socket.on('ready', function() {
     connected();
 });
 socket.on('end', function() {
     connecting();
-    socket = io.connect('http://whiskers75-miney.herokuapp.com/');
+    socket = io.connect('http://miney.herokuapp.com/');
 });
 socket.on('write', function(data) {
     main.write(data);

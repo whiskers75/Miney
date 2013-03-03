@@ -7,7 +7,7 @@
 // Require modules
 var Rcon = require('rcon'); // RCON is needed to connect to the server
 var http = require('http'); // to keep socket.io happy
-var io = require('socket.io').listen(http.createServer(function(req, res){}).listen(process.env.PORT));
+var io = require('socket.io').listen(http.createServer(function(req, res){res.redirect('http://whiskers75.github.com/Miney')}).listen(process.env.PORT));
 
 
 io.configure(function () { 

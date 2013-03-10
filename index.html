@@ -118,13 +118,14 @@ socket.on('end', function() {
     connecting();
     socket = io.connect('http://miney.herokuapp.com/');
 });
-socket.on('write', function(data) {
-    main.write(data.data);
+socket.on('flush', function(data) {
+    // Obsolete
 });
-socket.on('flush', function() {
+socket.on('write', function(data) {
     main.close();
     main.open();
     main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n');
+    main.write(data.data);
 });
 function buttonPressed(id) {
     socket.emit('button', {id: id});

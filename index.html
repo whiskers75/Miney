@@ -110,7 +110,6 @@ function connecting() {
     main.open();
     main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n<h1>Server connection in progress</h2>\n<h5>Icons courtesy of Glyphicons and Bootstrap.</h5>\n');
 }
-connecting();
 var socket = io.connect('http://miney.herokuapp.com/');
 socket.on('ready', function() {
     connected();

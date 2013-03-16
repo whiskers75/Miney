@@ -50,10 +50,9 @@ Enjoy!
  <!-- Template for future links         <li><a href="#">About</a></li> -->
 
 <li><button class="btn btn-link" data-toggle="modal" data-target="#login-modal">Login</button></li> <!-- Login button -->
-<li><button class="btn btn-link">Register</button></li>
 <li><button class='btn btn-link' disabled id='loginmsg'>Not logged in</button></li>
-<li><button class='btn btn-link' disabled><i class='icon-signal' id='loginicon'></i></button>
-<button class='btn btn-link' disabled id='connstatus'>Connecting</p></li>
+<li><button class='btn btn-link' disabled><i class='icon-ban-circle' id='loginicon'></i></button>
+<button class='btn btn-link' disabled id='connstatus'>Initializing</p></li>
 </ul> <!-- closes class for buttons/links -->
 
 
@@ -111,6 +110,7 @@ function connecting() {
     main.write('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">\n<h1>Server connection in progress</h2>\n<h5>Icons courtesy of Glyphicons and Bootstrap.</h5>\n');
 }
 var socket = io.connect('http://miney.herokuapp.com/');
+connecting();
 socket.on('ready', function() {
     connected();
 });
